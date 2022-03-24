@@ -1,0 +1,15 @@
+.accordion {
+    padding: 10px;
+    border-bottom: 1px solid #000;
+    &-item {
+        display: none;
+    }
+}
+
+.open .accordion-item {
+    display: block;
+}
+
+.completed {
+    color: #00B797;
+}
