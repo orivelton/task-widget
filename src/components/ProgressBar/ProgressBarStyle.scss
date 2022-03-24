@@ -1,0 +1,14 @@
+.bar {
+    width: 100%;
+    overflow: hidden;
+    background: #F2FBFA;
+    border-radius: 24px;
+    &__percentage {
+        display: block;
+        background: #00B797;
+        text-align: right;
+        color: #ffffff;
+        padding-right: 16px;
+        border-radius: 24px;
+    }
+}
