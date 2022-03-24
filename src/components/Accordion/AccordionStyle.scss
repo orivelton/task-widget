@@ -6,10 +6,17 @@
     }
 }
 
-.open .accordion-item {
-    display: block;
+.open {
+    .accordion-item {
+        display: block;
+    }
 }
 
 .completed {
     color: #00B797;
+    svg {
+        path {
+            fill: #00B797;
+        }
+    }
 }

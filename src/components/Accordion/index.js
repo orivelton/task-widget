@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react'
-import taskIcon from '../../assets/images/task-icon.svg'
+import React, { useContext, useEffect, useState } from 'react'
+import {ReactComponent as TaskIcon} from '../../assets/images/task-icon.svg'
+import { isCompleted, totalByTaskCheked } from '../../helpers/helper'
 import TaskContext from '../../hooks/task-context'
 import './AccordionStyle.scss'
 
@@ -14,7 +15,6 @@ const Accordion = ({ name, completed = false, tasks: taskList }) => {
 
     const handleCheckTask = ({ description }) => {
         const groupedTask = tasks.map(item => {
-            
             if(item.name === name) {
                 item.tasks.forEach(task => {
                     if(task?.description === description || task?.name === description) {
@@ -23,7 +23,7 @@ const Accordion = ({ name, completed = false, tasks: taskList }) => {
                     return task
                 })
 
-                item.completed = !item.tasks.filter(task => !task.checked).length
+                item.completed = isCompleted(item.tasks)
             }
             return item
         });
@@ -33,24 +33,27 @@ const Accordion = ({ name, completed = false, tasks: taskList }) => {
 
     return (
         <div key={name} className={`accordion ${ open ? "open" : ""}`} >
-            <div onClick={handleOpen}>
-                <img src={taskIcon} alt="Task icon" />
-                <span className={`${completed ? 'completed' : ''}`}>{name}</span>
+            <div onClick={handleOpen} className={`${completed ? 'completed' : ''}`}>
+                <TaskIcon />
+                <span>{name}</span>
                 <span> - {open ? 'Hide' : 'Show'}</span>
             </div>
             <div className="accordion-item">
                 {
-                    taskList.map(({ checked, description, name, value}) => (
-                        <p key={description}>
+                    taskList.map(({ checked, description, name, value}) => {
+                        const taskID = description+String(value)
+                        return (
+                            <p key={taskID}>
                             <input 
-                                id={description+String(value)} 
+                                id={taskID} 
                                 type="checkbox" 
                                 checked={checked} 
                                 onChange={() => handleCheckTask({ description: description || name })}
                             />
-                            <label htmlFor={description+String(value)}>{description || name }</label>
+                            <label htmlFor={taskID}>{description || name }</label>
                         </p>
-                    ))
+                        )
+                    })
                 }
             </div>
         </div>
