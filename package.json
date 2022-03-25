@@ -39,11 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
-    "pre-push": "^0.1.2"
-  },
-  "pre-push": [
-    "test -- --watchAll=false",
-    "build"
-  ]
+    "gh-pages": "^3.2.3"
+  }
 }
