@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/task-widget/static/css/main.3e36dd99.css",
+    "main.js": "/task-widget/static/js/main.664864e5.js",
+    "static/js/787.2ed38e2b.chunk.js": "/task-widget/static/js/787.2ed38e2b.chunk.js",
+    "static/media/task-icon.svg": "/task-widget/static/media/task-icon.ca180fae69831e00d474732b41a2ea5c.svg",
+    "index.html": "/task-widget/index.html",
+    "static/media/loading.svg": "/task-widget/static/media/loading.d0e3c10884639dfb7a9cc08127221489.svg",
+    "static/media/arrow-down.svg": "/task-widget/static/media/arrow-down.71be402387615b8d07c3e1c342bce2fb.svg",
+    "static/media/arrow-up.svg": "/task-widget/static/media/arrow-up.4f30f43761dc76b29f2100ff9831da7d.svg",
+    "main.3e36dd99.css.map": "/task-widget/static/css/main.3e36dd99.css.map",
+    "main.664864e5.js.map": "/task-widget/static/js/main.664864e5.js.map",
+    "787.2ed38e2b.chunk.js.map": "/task-widget/static/js/787.2ed38e2b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e36dd99.css",
+    "static/js/main.664864e5.js"
+  ]
+}
