@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { ReactComponent as TaskIcon} from '../../assets/images/task-icon.svg'
+import { ReactComponent as TaskIconDone} from '../../assets/images/task-icon-done.svg'
 import { ReactComponent as ArrowDown} from '../../assets/images/arrow-down.svg'
 import { ReactComponent as ArrowUp} from '../../assets/images/arrow-up.svg'
 import TaskContext from '../../hooks/task-context'
@@ -39,7 +40,7 @@ const Accordion = ({ name, taskList }) => {
         <div key={name} className={`accordion ${ open ? "open" : ""}`} >
             <div onClick={handleOpen} className={`accordion__tab ${isCompleted() ? 'completed' : ''}`}>
                 <div className="accordion__group">
-                    <TaskIcon />
+                    {isCompleted() ? <TaskIconDone /> : <TaskIcon />}
                     <span className="accordion__title">{name}</span>
                 </div>
                 <div>
