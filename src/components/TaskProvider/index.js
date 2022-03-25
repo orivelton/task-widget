@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { getTasks } from '../../helpers/api'
 import { totalAllTaskValue } from '../../helpers/helper'
 import TaskContext from '../../hooks/task-context'
@@ -35,3 +36,7 @@ const TaskProvider = ({ children }) => {
 }
 
 export default TaskProvider
+
+TaskProvider.propTypes = {
+    children: PropTypes.object.isRequired
+}

@@ -18,7 +18,7 @@ const ProgressBar = () => {
             progressBar: abc.reduce((a, b) => a + b),
         }))
 
-    }, [tasks.group])
+    }, [tasks.group, setTasks])
 
 
     return (

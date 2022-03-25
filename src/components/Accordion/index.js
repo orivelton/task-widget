@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react'
+import PropTypes from 'prop-types'
 import { ReactComponent as TaskIcon} from '../../assets/images/task-icon.svg'
 import { ReactComponent as TaskIconDone} from '../../assets/images/task-icon-done.svg'
 import { ReactComponent as ArrowDown} from '../../assets/images/arrow-down.svg'
 import { ReactComponent as ArrowUp} from '../../assets/images/arrow-up.svg'
 import TaskContext from '../../hooks/task-context'
 import './AccordionStyle.scss'
+import { updateTasks } from '../../helpers/helper'
 
 
 const Accordion = ({ name, taskList }) => {
@@ -18,17 +20,7 @@ const Accordion = ({ name, taskList }) => {
     const isCompleted = () => !taskList.filter(({ checked}) => !checked).length
 
     const handleCheckTask = ({ description }) => {
-        const groupedTask = tasks.group.map(item => {
-            if(item.name === name) {
-                item.tasks.forEach(task => {
-                    if(task?.description === description || task?.name === description) {
-                        task.checked = !task.checked
-                    }
-                    return task
-                })
-            }
-            return item
-        });
+        const groupedTask = updateTasks({ tasks, description, name })
 
         setTasks(prev => ({
             ...prev,
@@ -71,3 +63,8 @@ const Accordion = ({ name, taskList }) => {
 }
 
 export default Accordion
+
+Accordion.propTypes = {
+    name: PropTypes.string.isRequired,
+    taskList: PropTypes.object.isRequired
+}
