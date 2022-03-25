@@ -17,7 +17,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "jest": "jest",
     "eject": "react-scripts eject",
     "deploy": "npm run build; gh-pages -d build"
   },
@@ -44,7 +43,7 @@
     "pre-push": "^0.1.2"
   },
   "pre-push": [
-    "test",
+    "test -- --watchAll=false",
     "build"
   ]
 }
