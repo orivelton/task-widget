@@ -1,5 +1,6 @@
 {
   "name": "task-widget",
+  "homepage": "https://orivelton.github.io/task-widget",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
