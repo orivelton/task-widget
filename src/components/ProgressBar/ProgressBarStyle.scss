@@ -1,4 +1,13 @@
-.bar {
+.progress-wrapper {
+    padding: 32px 24px;
+    &__title {
+        font-size: 22px;
+        font-weight: 700;
+        padding-bottom: 16px;
+    }
+}
+
+.bar-wrapper {
     width: 100%;
     overflow: hidden;
     background: #F2FBFA;

@@ -1,5 +1,10 @@
-.accordion {
+.task-list-wrapper {
     width: 100%;
     overflow: hidden;
-    background: #F2FBFA;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+
+    .accordion:last-child {
+        border-bottom: 0;
+    }
 }

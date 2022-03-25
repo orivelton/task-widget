@@ -1,9 +1,7 @@
-const isCompleted = tasks => !tasks.filter(task => !task.checked).length
-
-const totalAllTaskValue = allTaks => {
+const totalAllTaskValue = allTasks => {
     const allValues = []
-    allTaks.forEach(({tasks}) => {
-        tasks.map(({ value }) => {
+    allTasks.forEach(({tasks}) => {
+        tasks.forEach(({ value }) => {
             allValues.push(value)
         })
     })
@@ -12,6 +10,6 @@ const totalAllTaskValue = allTaks => {
     return allValues.reduce((a, b) => a + b)
 }
 
-const totalByTaskCheked = task => task.map(({ value, checked }) => (checked ? value : 0)).reduce((a , b) => a + b)
+const totalByTaskChecked = task => task.map(({ value, checked }) => (checked ? value : 0)).reduce((a , b) => a + b)
 
-export { isCompleted, totalAllTaskValue, totalByTaskCheked }
+export { totalAllTaskValue, totalByTaskChecked }
