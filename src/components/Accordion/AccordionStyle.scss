@@ -32,6 +32,8 @@
 
             & + label {
                 position: relative;
+                display: flex;
+                align-items: center;
                 &:before {
                     content:'';
                     -webkit-appearance: none;
@@ -43,7 +45,7 @@
                     position: relative;
                     vertical-align: middle;
                     cursor: pointer;
-                    margin-right: 5px;
+                    margin-right: 16px;
                 }
             }
 
@@ -58,7 +60,7 @@
                     content: '';
                     display: block;
                     position: absolute;
-                    top: 5px;
+                    top: 4px;
                     left: 5px;
                     width: 4px;
                     height: 8px;
@@ -97,9 +99,11 @@
         color: #00B797;
     }
 
-    svg {
-        path {
-            fill: #00B797;
+    .accordion__group {
+        svg {
+            path {
+                fill: #00B797;
+            }
         }
     }
 }

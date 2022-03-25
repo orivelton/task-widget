@@ -6,7 +6,6 @@ const totalAllTaskValue = allTasks => {
         })
     })
 
-
     return allValues.reduce((a, b) => a + b)
 }
 

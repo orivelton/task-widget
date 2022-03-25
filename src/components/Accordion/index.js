@@ -38,7 +38,7 @@ const Accordion = ({ name, taskList }) => {
     return (
         <div key={name} className={`accordion ${ open ? "open" : ""}`} >
             <div onClick={handleOpen} className={`accordion__tab ${isCompleted() ? 'completed' : ''}`}>
-                <div>
+                <div className="accordion__group">
                     <TaskIcon />
                     <span className="accordion__title">{name}</span>
                 </div>
@@ -50,7 +50,7 @@ const Accordion = ({ name, taskList }) => {
             <div className="accordion__item">
                 {
                     taskList.map(({ checked, description, name, value}) => {
-                        const taskID = description+String(value)
+                        const taskID = `${description}${name}${value}`.replace(/\s/g,'')
                         return (
                             <div className="accordion__checkbox" key={taskID}>
                                 <input 
