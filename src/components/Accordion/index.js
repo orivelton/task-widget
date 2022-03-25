@@ -66,5 +66,5 @@ export default Accordion
 
 Accordion.propTypes = {
     name: PropTypes.string.isRequired,
-    taskList: PropTypes.object.isRequired
+    taskList: PropTypes.array.isRequired
 }
