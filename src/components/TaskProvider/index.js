@@ -5,7 +5,6 @@ import { totalAllTaskValue } from '../../helpers/helper'
 import TaskContext from '../../hooks/task-context'
 import { ReactComponent as Loading } from '../../assets/images/loading.svg'
 
-
 const TaskProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const [tasks, setTasks] = useState({

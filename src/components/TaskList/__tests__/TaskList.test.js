@@ -8,7 +8,6 @@ beforeEach(() => {
     mockFetch()
 })
 
-
 test('Render TaskList component', async () => {
     let component
     await act(async () => {

@@ -8,7 +8,6 @@ beforeEach(() => {
     mockFetch()
 })
 
-
 test('Render ProgressBar component', async () => {
     let component
     await act(async () => {

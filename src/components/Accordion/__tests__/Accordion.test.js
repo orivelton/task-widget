@@ -1,5 +1,5 @@
 import React from 'react'
-import { act, fireEvent, render } from '@testing-library/react'
+import { act, fireEvent, render, screen } from '@testing-library/react'
 import Accordion from '../index'
 import TaskProvider from '../../TaskProvider'
 import { mockFetch } from '../../../mock/mockFetch'
@@ -70,6 +70,8 @@ test('Render Accordion component as all selected', async () => {
                 <Accordion {...props1} />
             </TaskProvider>
         )
-    });
+    })
 
+    const { getByText } = component
+    expect(getByText(/general infos/i)).toBeInTheDocument()
 })

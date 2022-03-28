@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
+import TaskContext from '../../hooks/task-context'
+import { updateTasks } from '../../helpers/helper'
 import { ReactComponent as TaskIcon} from '../../assets/images/task-icon.svg'
 import { ReactComponent as TaskIconDone} from '../../assets/images/task-icon-done.svg'
 import { ReactComponent as ArrowDown} from '../../assets/images/arrow-down.svg'
 import { ReactComponent as ArrowUp} from '../../assets/images/arrow-up.svg'
-import TaskContext from '../../hooks/task-context'
 import './AccordionStyle.scss'
-import { updateTasks } from '../../helpers/helper'
 
 
 const Accordion = ({ name, taskList }) => {
