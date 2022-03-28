@@ -8,7 +8,7 @@ beforeEach(() => {
     mockFetch()
 })
 
-afterEach(() => { jest.restoreAllMocks(); })
+afterEach(() => { jest.restoreAllMocks()})
 
 const props = {
     "name": "General Infos",
