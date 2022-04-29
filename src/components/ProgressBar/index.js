@@ -24,15 +24,11 @@ const ProgressBar = () => {
     return (
         <div className="progress-wrapper">
             <h1 className="progress-wrapper__title">Lodgify Grouped Tasks</h1>
-            {
-                !!tasks?.progressBar && (
-                    <div className="bar-wrapper">
-                        <span className="bar-wrapper__percentage" style={{ width: `${tasks?.progressBar}%` }}>
-                            {tasks?.progressBar?.toFixed(0)}%
-                        </span>
-                    </div>
-                )
-            }
+            <div className="bar-wrapper">
+                <span className="bar-wrapper__percentage" style={{ width: `${tasks?.progressBar}%`, transition: 'width 0.5s ease-in-out'}} >
+                    {tasks?.progressBar?.toFixed(0)}%
+                </span>
+            </div>
         </div>
     )
 }
